@@ -3,7 +3,7 @@
 
 <Context reloadable="true">
 <Resource
-name="jdbc/jse"
+name="jdbc/test"
 auth="Container"
 type="javax.sql.DataSource"
 driverClassName="org.h2.Driver"

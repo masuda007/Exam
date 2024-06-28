@@ -23,7 +23,7 @@
             <input class="check-input" type="checkbox" id="showPassword"> パスワードを表示
         </label> <br>
         <div class="button">
-            <button type="button" id="loginButton">ログイン</button>
+            <button type="submit" id="loginButton">ログイン</button>
         </div>
     </form>
 </div>

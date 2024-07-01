@@ -17,20 +17,37 @@
     }
 
     /* ヘッダーのスタイル */
-    header {
-        background-color: #D7EEFF;
-        padding: 14px;
-        padding-right: 60px;
-        height: 40px;
-        line-height: 0;
+  	h1 {
+    background-color: #e0ffff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.logout {
+    position: absolute;
+    top: 45px;
+    right: 20px;
+    bottom: 10px;
+    text-decoration: none;
+    color: #007bff;
+           text-decoration: underline;
     }
+.teacher-name {
+    position: absolute;
+    top: 45px;
+    right: 130px;
+    bottom: 10px;
+    text-decoration: none;
+    }
+
 
     /* サイドバーとメインコンテンツのラッパー */
     .content-wrapper {
         display: flex;
         flex: 1;
     }
-
     /* サイドバーのスタイル */
     aside {
         width: 15%;

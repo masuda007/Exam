@@ -15,7 +15,7 @@
         flex-direction: column;
         min-height: 100vh;
     }
-
+    
     /* ヘッダーのスタイル */
   	h1 {
     background-color: #e0ffff;

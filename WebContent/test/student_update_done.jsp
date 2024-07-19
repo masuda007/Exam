@@ -8,6 +8,8 @@
 
 <header>
     	<h1 class="h1">得点管理システム</h1>
+    			<span class="teacher-name">${sessionScope.teacher.name}様</span>
+    	<a href="Logout.action" class="logout">ログアウト</a>
 </header>
 
 <div class="container">

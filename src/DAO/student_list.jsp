@@ -6,8 +6,6 @@
 <head>
 <meta charset="UTF-8">
 <title>学生管理システム</title>
-		<span class="teacher-name">${sessionScope.teacher.name}様</span>
-    	<a href="Logout.action" class="logout">ログアウト</a>
 </head>
 <body>
 
@@ -83,7 +81,7 @@
                                         ○
                                     </c:when>
                                     <c:otherwise>
-                                        ×
+                                        ✕
                                     </c:otherwise>
                                 </c:choose>
                             </td>

@@ -17,37 +17,20 @@
     }
 
     /* ヘッダーのスタイル */
-  	h1 {
-    background-color: #e0ffff;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-}
-.logout {
-    position: absolute;
-    top: 45px;
-    right: 20px;
-    bottom: 10px;
-    text-decoration: none;
-    color: #007bff;
-           text-decoration: underline;
+    header {
+        background-color: #D7EEFF;
+        padding: 14px;
+        padding-right: 60px;
+        height: 40px;
+        line-height: 0;
     }
-.teacher-name {
-    position: absolute;
-    top: 45px;
-    right: 130px;
-    bottom: 10px;
-    text-decoration: none;
-    }
-
 
     /* サイドバーとメインコンテンツのラッパー */
     .content-wrapper {
         display: flex;
         flex: 1;
     }
+
     /* サイドバーのスタイル */
     aside {
         width: 15%;
@@ -209,98 +192,6 @@
     .menu-item a:hover {
         background-color: rgba(255, 255, 255, 0.2); /* ホバー時の背景色変更 */
     }
-
-
-/* フォーム間の線のスタイル */
-.form-divider {
-    border: none;
-    border-top: 2px solid #f1f1f1;
-    margin: 20px 0;
-}
-
-
-
-
-
-/* ボタンの角を丸くするスタイル */
-.btn {
-    border-radius: 15px;
-    padding: 10px 20px;
-    border: 1px solid #ddd;
-    background-color: #333;
-    color: white;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
-}
-
-.btn-secondary {
-    background-color: #6c757d;
-    border-color: #6c757d;
-}
-
-
-
-
-    /* 入学年度、クラス、科目、学生番号、検索ボタンのスタイル */
-.form-group {
-    margin-bottom: 15px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.form-group select,
-.form-group input {
-    width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
-}
-
-/* 検索ボタンのスタイル */
-button[type="submit"] {
-    padding: 8px 15px;
-    background-color: #696969;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    border-radius: 10px; /* 角を丸くする */
-}
-
-/* 検索ボタンを触ったとき */
-button[type="submit"]:hover {
-    background-color: #0056b3;
-    padding: 8px 15px;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    border-radius: 10px; /* 角を丸くする */
-}
-
-/* テーブルのスタイル */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-table th,
-table td {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: left;
-}
-
-.message-blue {
-    color: skyblue;
-}
-
 
 
 </style>

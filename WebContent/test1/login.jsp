@@ -17,8 +17,8 @@
         <p style="color: red">${errorMessage}</p>
     </c:if>
     <form action="LoginExecute.action" method="post">
-        <input type="text" class="id" name="id" maxlength="20" placeholder="ID" required  > <br>
-        <input type="password" class="password" name="password" id="password" maxlength="20" placeholder="パスワード" required > <br>
+        <input type="text" class="id" name="id" placeholder="ID" required> <br>
+        <input type="password" class="password" name="password" id="password" placeholder="パスワード"required> <br>
         <label class="label-password">
             <input class="check-input" type="checkbox" id="showPassword"> パスワードを表示
         </label> <br>
@@ -86,14 +86,6 @@
 	    padding: 10px; /* 入力欄の内側の余白を設定 */
 	    margin-bottom: 10px; /* 入力欄の下に余白を設定 */
 	}
-
-        /* フィールド内のテキストの高さを調整 */
-        .id,
-        .password {
-            line-height: 1.5; /* 行の高さを設定 */
-        }
-
-
 
 	.check-input {
 		 margin-bottom: 15px; /* 入力欄の下に余白を設定 */

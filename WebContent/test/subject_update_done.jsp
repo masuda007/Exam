@@ -15,15 +15,9 @@
 <div class="content-wrapper">
  	<jsp:include page="base.jsp" />
 		<article>
-			<h2>メニュー</h2>
-			<div class="menu-items">
-				<a class="menu-item student" href="StudentList.action">学生管理</a>
-				<div class="menu-item grades">成績管理
-       				<a href="TestRegist.action">成績登録</a>
-       				<a href="TestList.action">成績参照</a>
-   				</div>
-    			<a class="menu-item subject" href="SubjectList.action">科目管理</a>
-    		</div>
+			<h2>科目情報登録</h2>
+			<div class="label"><label>変更が完了しました</label></div>
+			<div><a href="SubjectList.action">科目一覧</a></div>
 		</article>
 </div>
 
@@ -35,3 +29,16 @@
 </div>
 
 </body>
+
+
+<style>
+
+	.label{
+		background-color: #66CDAA;
+		width: 100%;
+        padding: 1px;
+        margin: 0;
+        text-align: center;
+	}
+
+</style>

@@ -6,10 +6,10 @@
         <a href="StudentList.action">学生管理</a>
         <div>成績管理
             <div class="submenu">
-                <a href="../kadai/New.action">成績登録</a>
-                <a href="../kadai/Remove.action">成績参照</a>
+                <a href="TestRegist.action">成績登録</a>
+                <a href="TestList.action">成績参照</a>
             </div>
         </div>
-        <a href="../kadai/Add.action">科目管理</a>
+        <a href="SubjectList.action">科目管理</a>
     </nav>
 </aside>

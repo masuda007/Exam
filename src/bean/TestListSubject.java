@@ -23,6 +23,7 @@ public class TestListSubject implements Serializable {
         this.entYear = entYear;
     }
 
+<<<<<<< HEAD
     public String getStudentNo() {
         return studentNo;
     }
@@ -50,6 +51,41 @@ public class TestListSubject implements Serializable {
     public Map<Integer, Integer> getPoints() {
         return points;
     }
+=======
+
+    public String getStudentNo() {
+        return studentNo;
+    }
+
+
+    public void setStudentNo(String studentNo) {
+        this.studentNo = studentNo;
+    }
+
+
+    public String getStudentName() {
+        return studentName;
+    }
+
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
+    }
+
+
+    public String getClassNum() {
+        return classNum;
+    }
+
+    public void setClassNum(String classNum) {
+        this.classNum = classNum;
+    }
+
+
+    public Map<Integer, Integer> getPoints() {
+        return points;
+    }
+
+>>>>>>> branch 'master' of https://github.com/masuda007/Exam.git
 
     public Integer getPoint(int key) {
         return points.get(key);

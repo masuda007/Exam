@@ -22,10 +22,10 @@
 			<div class="menu-items">
 				<a class="menu-item student" href="StudentList.action">学生管理</a>
 				<div class="menu-item grades">成績管理
-       				<a href="../kadai/New.action">成績登録</a>
-       				<a href="../kadai/Remove.action">成績参照</a>
+       				<a href="TestRegist.action">成績登録</a>
+       				<a href="TestList.action">成績参照</a>
    				</div>
-    			<a class="menu-item subject" href="../kadai/Add.action">科目管理</a>
+    			<a class="menu-item subject" href="SubjectList.action">科目管理</a>
     		</div>
 		</article>
 </div>

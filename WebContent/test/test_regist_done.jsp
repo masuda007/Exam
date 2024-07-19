@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-<%-- 次回追記 --%>
-=======
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@include file="css.jsp" %>
@@ -18,9 +15,10 @@
 <div class="content-wrapper">
  	<jsp:include page="base.jsp" />
 		<article>
-			<h2>科目情報登録</h2>
-			<div class="label"><label>変更が完了しました</label></div>
-			<div><a href="SubjectList.action">科目一覧</a></div>
+			<h2>成績登録</h2>
+			<div class="label"><label>登録が完了しました</label></div>
+			<div><a href="TestRegist.action">戻る</a></div>
+			<div><a href="TestList.action">成績参照</a></div>
 		</article>
 </div>
 
@@ -45,4 +43,3 @@
 	}
 
 </style>
->>>>>>> branch 'master' of https://github.com/masuda007/Exam.git

@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<<<<<<< HEAD
 <title>科目管理システム</title>
 </head>
 <body>
@@ -52,6 +53,46 @@
                     </c:forEach>
                 </table>
             </c:when>
+=======
+<title>学生管理システム</title>
+</head>
+<body>
+
+<div class="container">
+
+<header>
+    <h1 class="h1">得点管理システム</h1>
+</header>
+
+<div class="content-wrapper">
+    <jsp:include page="base.jsp" />
+    <article>
+        <h2 class="studentsystem">科目管理</h2>
+        <div class="new"><a href="SubjectCreate.action">新規登録</a></div>
+
+        <c:choose>
+            <c:when test="${not empty subjects}">
+                <table class="table">
+                    <tr>
+                        <th>科目コード</th>
+                        <th>科目名</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <c:forEach var="subject" items="${subjects}">
+                        <tr>
+                            <td>${subject.cd}</td>
+                            <td>${subject.name}</td>
+                            <td><a href="SubjectUpdate.action?cd=${subject.cd}">変更</a></td>
+                            <td><a href="SubjectDelete.action?cd=${subject.cd}">削除</a></td>
+                        </tr>
+                    </c:forEach>
+                </table>
+            </c:when>
+            <c:otherwise>
+                <div>科目情報が存在しませんでした。</div>
+            </c:otherwise>
+>>>>>>> branch 'master' of https://github.com/masuda007/Exam.git
         </c:choose>
     </article>
 </div>

@@ -13,6 +13,8 @@
 
 <header>
     <h1 class="h1">得点管理システム</h1>
+    	<span class="teacher-name">${sessionScope.teacher.name}様</span>
+    	<a href="Logout.action" class="logout">ログアウト</a>
 </header>
 
 <div class="content-wrapper">
@@ -21,10 +23,10 @@
         <h2 class="studentsystem">成績参照</h2>
 
         <div class="contents">
-            <form action="TestRegist.action" method="get" class="form-inline">
+            <form action="TestListSubjectExecute.action" method="get" class="form-inline">
             	<div>科目情報</div>
 			    <div class="col-4">
-			        <label class="form-label">入学年度</label>
+			        <th>入学年度</th>
 			        <select class="form-select" name="f1">
 			            <option value="0">--------</option>
 			            <c:forEach var="year" items="${yearSet}">
@@ -34,7 +36,7 @@
 			    </div>
 
 			    <div class="col-4">
-			        <label class="form-label">クラス</label>
+			        <th>クラス</th>
 			        <select class="form-select" name="f2">
 			            <option value="0">--------</option>
 			            <c:forEach var="classNum" items="${classNumSet}">
@@ -44,7 +46,7 @@
 			    </div>
 
 			    <div class="col-4">
-			        <label class="form-label">科目</label>
+			        <th>科目</th>
 			        <select class="form-select" name="f3">
 			            <option value="0">--------</option>
 			            <c:forEach var="subject" items="${subjectsSet}">
@@ -60,11 +62,11 @@
 
 
 			<form action="TestListStudentExecute.action" method="get" class="form-inline">
-				<div>学生情報</div>
+				<p>学生情報</p>
 
 			    <div class="col-4">
-			        <label class="form-label">学生番号</label>
-			        <input type="text" required name="studentNo">
+			        <div>学生番号</div>
+			        <input type="text" required name="f4" maxlength="10" placeholder="学生番号を入力してください">
 			    </div>
 
 			     <div class="col-2 button">
@@ -75,7 +77,7 @@
 
         </div>
 
-                <div>科目情報を選択または学生情報を入力して検索をクリックしてください</div>
+                <p>科目情報を選択または学生情報を入力して検索をクリックしてください</p>
 
 
     </article>

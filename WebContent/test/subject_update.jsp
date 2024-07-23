@@ -12,12 +12,14 @@
 <div class="container">
     <header>
         <h1 class="h1">得点管理システム</h1>
+        	<span class="teacher-name">${sessionScope.teacher.name}様</span>
+    		<a href="Logout.action" class="logout">ログアウト</a>
     </header>
 
     <div class="content-wrapper">
         <jsp:include page="base.jsp" />
         <article>
-            <h2 class="studentsystem">科目情報更新</h2>
+            <h2 class="studentsystem">科目情報変更</h2>
 
             <div class="contents">
                 <c:if test="${not empty error}">
@@ -36,7 +38,7 @@
 
                     <div class="col-4">
                         <label class="from-label">科目名</label><br>
-                        <input type="text" required class="from-select" name="name" value="${subject.name}">
+                        <input type="text" required class="from-select" maxlength="20" name="name" value="${subject.name}">
                     </div>
 
                     <div class="col-2 button">

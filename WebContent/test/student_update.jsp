@@ -12,12 +12,14 @@
 <div class="container">
     <header>
         <h1 class="h1">得点管理システム</h1>
+        <span class="teacher-name">${sessionScope.teacher.name}様</span>
+    	<a href="Logout.action" class="logout">ログアウト</a>
     </header>
 
     <div class="content-wrapper">
         <jsp:include page="base.jsp" />
         <article>
-            <h2 class="studentsystem">学生情報更新</h2>
+            <h2 class="studentsystem">学生情報変更</h2>
 
             <div class="contents">
                 <form action="StudentUpdateExecute.action" method="post" class="form-i">
@@ -72,3 +74,4 @@
 
 </body>
 </html>
+

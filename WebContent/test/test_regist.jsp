@@ -10,6 +10,8 @@
 <div class="container">
     <header>
         <h1 class="h1">得点管理システム</h1>
+			<span class="teacher-name">${sessionScope.teacher.name}様</span>
+    		<a href="Logout.action" class="logout">ログアウト</a>
     </header>
 
     <div class="content-wrapper">
@@ -21,7 +23,7 @@
                 <form action="TestRegistExecute.action" method="get" class="form-inline">
                     <!-- 入学年度 -->
                     <div class="col-4">
-                        <label class="form-label">入学年度</label>
+                        <th>入学年度</th>
                         <select class="form-select" name="f1">
                             <option value="0">--------</option>
                             <c:forEach var="year" items="${yearSet}">
@@ -32,7 +34,7 @@
 
                     <!-- クラス -->
                     <div class="col-4">
-                        <label class="form-label">クラス</label>
+                        <th>クラス</th>
                         <select class="form-select" name="f2">
                             <option value="0">--------</option>
                             <c:forEach var="classNum" items="${classNumSet}">
@@ -43,7 +45,7 @@
 
                     <!-- 科目 -->
                     <div class="col-4">
-                        <label class="form-label">科目</label>
+                        <th">科目</th>
                         <select class="form-select" name="f3">
                             <option value="0">--------</option>
                             <c:forEach var="subject" items="${subjectsSet}">
@@ -54,7 +56,7 @@
 
                     <!-- 回数 -->
                     <div class="col-4">
-                        <label class="form-label">回数</label>
+                        <th>回数</th>
                         <select class="form-select" name="f4">
                             <option value="0">--------</option>
                             <c:forEach var="num" items="${numSet}">
@@ -69,9 +71,11 @@
                     </div>
 
                     <!-- エラーメッセージ -->
-                    <c:if test="${not empty errors}">
-                        <p style="color: red;">${errors}</p>
-                    </c:if>
+						<c:if test="${not empty errors}">
+						    <c:forEach var="error" items="${errors}">
+						        <p style="color: red;">${error}</p>
+						    </c:forEach>
+						</c:if>
                 </form>
             </div>
 

@@ -17,8 +17,8 @@
         <p style="color: red">${errorMessage}</p>
     </c:if>
     <form action="LoginExecute.action" method="post">
-        <input type="text" class="id" name="id" placeholder="ID" required> <br>
-        <input type="password" class="password" name="password" id="password" placeholder="パスワード"required> <br>
+        <input type="text" class="id" name="id" placeholder="ID"> <br>
+        <input type="password" class="password" name="password" id="password" placeholder="パスワード"> <br>
         <label class="label-password">
             <input class="check-input" type="checkbox" id="showPassword"> パスワードを表示
         </label> <br>

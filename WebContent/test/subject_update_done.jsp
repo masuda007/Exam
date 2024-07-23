@@ -8,6 +8,8 @@
 
 <header>
     	<h1 class="h1">得点管理システム</h1>
+	    	<span class="teacher-name">${sessionScope.teacher.name}様</span>
+	    	<a href="Logout.action" class="logout">ログアウト</a>
 </header>
 
 <div class="container">
@@ -15,7 +17,7 @@
 <div class="content-wrapper">
  	<jsp:include page="base.jsp" />
 		<article>
-			<h2>科目情報登録</h2>
+			<h2>科目情報変更</h2>
 			<div class="label"><label>変更が完了しました</label></div>
 			<div><a href="SubjectList.action">科目一覧</a></div>
 		</article>

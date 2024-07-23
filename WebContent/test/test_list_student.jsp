@@ -10,6 +10,8 @@
 <div class="container">
     <header>
         <h1 class="h1">得点管理システム</h1>
+        	<span class="teacher-name">${sessionScope.teacher.name}様</span>
+    		<a href="Logout.action" class="logout">ログアウト</a>
     </header>
 
     <div class="content-wrapper">
@@ -18,7 +20,7 @@
             <h2 class="studentsystem">成績一覧　(学生)</h2>
 
             <div class="contents">
-            <form action="TestRegist.action" method="get" class="form-inline">
+            <form action="TestListSubjectExecute" method="get" class="form-inline">
             	<div>科目情報</div>
 			    <div class="col-4">
 			        <label class="form-label">入学年度</label>
@@ -57,11 +59,11 @@
 
 
 			<form action="TestListStudentExecute.action" method="get" class="form-inline">
-				<div>学生情報</div>
+				<p>学生情報</p>
 
 			    <div class="col-4">
-			        <label class="form-label">学生番号</label>
-			        <input type="text" required name="studentNo">
+			        <div>学生番号</div>
+			        <input type="text" required name="f4" maxlength="10" placeholder="学生番号を入力してください">
 			    </div>
 
 			     <div class="col-2 button">
@@ -96,7 +98,8 @@
                     </table>
                 </c:when>
                 <c:otherwise>
-                    <p>該当する成績データが見つかりませんでした。</p>
+                	<div>氏名: ${testList[0].student.name} (${testList[0].student.no})</div>
+                    <div>成績情報が存在しませんでした</div>
                 </c:otherwise>
             </c:choose>
         </article>

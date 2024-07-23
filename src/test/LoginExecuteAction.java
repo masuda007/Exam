@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import DAO.TeacherDao;
+import bean.School;
 import bean.Teacher;
 import tool.Action;
 
@@ -19,7 +20,11 @@ public class LoginExecuteAction extends Action {
 
         if (teacher != null) {
             // ログイン成功時の処理
+            School school = teacher.getSchool(); // TeacherオブジェクトからSchoolオブジェクトを取得
+
             session.setAttribute("teacher", teacher);
+            session.setAttribute("school", school); // Schoolオブジェクトをセッションに保存
+
             response.sendRedirect("menu.jsp"); // menu.jspにリダイレクト
         } else {
             // ログイン失敗時の処理

@@ -1,4 +1,4 @@
-<%@page contentType="text/html; charset=UTF-8" %>
+base.jsp<%@page contentType="text/html; charset=UTF-8" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <style>
     /* 全体のスタイルリセットと基本設定 */
@@ -15,7 +15,7 @@
         flex-direction: column;
         min-height: 100vh;
     }
-    
+
     /* ヘッダーのスタイル */
   	h1 {
     background-color: #e0ffff;

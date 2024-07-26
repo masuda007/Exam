@@ -112,4 +112,12 @@
 	    padding: 8px;
 	    margin-top: 5px;
 	}
+
+	.alert-danger {
+	        color: #FFCC33;
+	        border-color: #ffeeba;
+	        padding: 2px;
+	        margin-top: 2px;
+	        font-size: smaller;
+	    }
 </style>

@@ -5,7 +5,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>科目情報更新</title>
+    <title>科目情報変更</title>
 </head>
 <body>
 

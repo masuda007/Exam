@@ -13,33 +13,36 @@ import bean.TestListSubject;
 
 public class TestListSubjectDao extends Dao {
 
-    private String baseSql = "SELECT * FROM test_list_subject WHERE ent_year=? AND class_num=? AND subject=? AND school_cd=?";
+    private String baseSql = "SELECT s.ent_year, t.class_num, s.no AS student_no, s.name AS student_name, t.point, t.no AS test_count, sub.name " +
+                              "FROM test t " +
+                              "JOIN student s ON t.student_no = s.no " +
+                              "JOIN subject sub ON t.subject_cd = sub.cd " +
+                              "WHERE s.ent_year = ? AND t.class_num = ? AND sub.name = ? " +
+                              "ORDER BY s.no, t.no";
 
     private List<TestListSubject> postFilter(ResultSet rSet) throws SQLException {
-        List<TestListSubject> list = new ArrayList<>();
+        Map<String, TestListSubject> map = new HashMap<>();
         while (rSet.next()) {
-            TestListSubject testListSubject = new TestListSubject();
+            String studentNo = rSet.getString("student_no");
+            TestListSubject testListSubject = map.getOrDefault(studentNo, new TestListSubject());
             testListSubject.setEntYear(rSet.getInt("ent_year"));
-            testListSubject.setStudentNo(rSet.getString("student_no"));
+            testListSubject.setStudentNo(studentNo);
             testListSubject.setStudentName(rSet.getString("student_name"));
             testListSubject.setClassNum(rSet.getString("class_num"));
 
-            Map<Integer, Integer> points = new HashMap<>();
-            // Assuming you have columns like point_1, point_2, ..., point_n
-            for (int i = 1; i <= 10; i++) {  // adjust the range as per your schema
-                int point = rSet.getInt("point_" + i);
-                if (!rSet.wasNull()) {
-                    points.put(i, point);
-                }
-            }
-            testListSubject.getPoints().putAll(points);
+            // テスト番号(t.no)とポイント(t.point)をマップに格納
+            testListSubject.putPoint(rSet.getInt("test_count"), rSet.getInt("point"));
 
-            list.add(testListSubject);
+            // デバッグログに出力
+            System.out.println("Debug: " + testListSubject.getStudentNo() + ", TestNo: " + rSet.getInt("test_count") + ", Point: " + rSet.getInt("point"));
+
+            map.put(studentNo, testListSubject);
         }
-        return list;
+        return new ArrayList<>(map.values());
     }
 
-    public List<TestListSubject> filter(int entYear, String classNum, String subject, String school) throws Exception {
+
+    public List<TestListSubject> filter(int entYear, String classNum, String subject) throws Exception {
         List<TestListSubject> list = new ArrayList<>();
         try (Connection connection = getConnection();
              PreparedStatement statement = connection.prepareStatement(baseSql)) {
@@ -47,7 +50,6 @@ public class TestListSubjectDao extends Dao {
             statement.setInt(1, entYear);
             statement.setString(2, classNum);
             statement.setString(3, subject);
-            statement.setString(4, school);
 
             try (ResultSet rSet = statement.executeQuery()) {
                 list = postFilter(rSet);

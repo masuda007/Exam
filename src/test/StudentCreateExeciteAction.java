@@ -32,7 +32,7 @@ public class StudentCreateExeciteAction extends Action {
 
 	        // 入学年度のチェック
 	        if (entYearStr == null || entYearStr.isEmpty() || entYearStr.equals("0")) {
-	            errors.put("ent_year", "入学年度を入力してください。");
+	            errors.put("ent_year", "入学年度を選択してください");
 	        }
 
 	        int entYear = 0;
@@ -53,7 +53,7 @@ public class StudentCreateExeciteAction extends Action {
 	        }
 
 	        if (existingStudent != null) {
-	            errors.put("no", "学生番号が既に存在しています。");
+	            errors.put("no", "学生番号が重複しています。");
 	        }
 
 	        // エラーメッセージがある場合

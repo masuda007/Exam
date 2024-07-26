@@ -17,8 +17,11 @@
         <p style="color: red">${errorMessage}</p>
     </c:if>
     <form action="LoginExecute.action" method="post">
-        <input type="text" class="id" name="id" placeholder="ID"> <br>
-        <input type="password" class="password" name="password" id="password" placeholder="パスワード"> <br>
+
+        <input type="text" class="id" name="id"  placeholder="半角でご入力ください" maxlength="20" pattern="[A-Za-z0-9]*" required> <br>
+
+        <input type="password" class="password" name="password"   id="password" placeholder="20文字以内の半角英数字で入力ください" maxlength="20" pattern="[A-Za-z0-9]*" required> <br>
+
         <label class="label-password">
             <input class="check-input" type="checkbox" id="showPassword"> パスワードを表示
         </label> <br>

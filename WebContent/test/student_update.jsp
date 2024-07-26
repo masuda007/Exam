@@ -26,17 +26,17 @@
 
                     <div class="col-4">
                         <label class="from-label">入学年度</label><br>
-                        <input type="text" class="from-select" name="ent_year" value="${student.entYear}">
+                        <input type="text" class="from-select" name="ent_year" readonly value="${student.entYear}">
                     </div>
 
                     <div class="col-4">
                         <label class="from-label">学生番号</label><br>
-                        <input type="text" class="from-select" name="no" value="${student.no}" readonly>
+                        <input type="text" class="from-select" name="no" readonly value="${student.no}" readonly>
                     </div>
 
                     <div class="col-4">
                         <label class="from-label">氏名</label><br>
-                        <input type="text" required class="from-select" name="name" value="${student.name}">
+                        <input type="text" required class="from-select" placeholder="氏名を入力してください" name="name" maxlength="30" value="${student.name}">
                     </div>
 
                     <div class="col-4">

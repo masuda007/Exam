@@ -7,7 +7,7 @@
 <body>
 
 <header>
-    	<h1 class="h1">システムエラー</h1>
+    	<h1 class="h1">得点管理システム</h1>
 </header>
 
 <div class="container">
@@ -17,7 +17,9 @@
 
 		<article>
 			<h3>エラーが発生しました。</h3>
-
+			<c:if test="${not empty errorMessage}">
+			    <div class="error-message">${errorMessage}</div>
+			</c:if>
 		</article>
 
 	</div>

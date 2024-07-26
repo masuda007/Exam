@@ -107,4 +107,24 @@ public class TestListStudentDao extends Dao {
             }
         }
     }
+
+    public Student getStudent(String studentNo, School school) throws Exception {
+        Student student = null;
+
+        try (Connection con = getConnection()) {
+            String sql = "SELECT * FROM student WHERE no = ? AND school_cd = ?";
+            PreparedStatement st = con.prepareStatement(sql);
+            st.setString(1, studentNo);
+            st.setString(2, school.getCd());
+
+            ResultSet rs = st.executeQuery();
+            if (rs.next()) {
+                student = new Student();
+                student.setNo(rs.getString("no"));
+                student.setName(rs.getString("name"));
+                // 他のフィールドを設定
+            }
+        }
+        return student;
+    }
 }

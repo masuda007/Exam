@@ -28,7 +28,7 @@ public class LoginExecuteAction extends Action {
             response.sendRedirect("menu.jsp"); // menu.jspにリダイレクト
         } else {
             // ログイン失敗時の処理
-            String errorMessage = "IDまたはパスワードが間違っています。再度お試しください。";
+            String errorMessage = "ログインに失敗しました、IDまたはパスワードが正しくありません。";
             request.setAttribute("errorMessage", errorMessage);
             request.getRequestDispatcher("login.jsp").forward(request, response);
         }

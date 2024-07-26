@@ -19,7 +19,7 @@ public class NumDao extends Dao {
 
         try {
             connection = getConnection();
-            String sql = "SELECT no FROM test WHERE school_cd = ?";
+            String sql = "SELECT DISTINCT no FROM test WHERE school_cd = ?";
             statement = connection.prepareStatement(sql);
             statement.setString(1, school.getCd());
             resultSet = statement.executeQuery();

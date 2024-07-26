@@ -1,12 +1,12 @@
 package test;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import DAO.TestDao;
 import bean.School;
@@ -17,7 +17,12 @@ public class TestRegistExecuteAction extends Action {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            List<String> errors = new ArrayList<>();
+            // 学校情報を取得
+            HttpSession session = request.getSession();
+            School school = (School) session.getAttribute("school");
+            if (school == null) {
+                throw new IllegalStateException("School object is not found in session");
+            }
 
             // パラメータを取得
             String entYearStr = request.getParameter("f1");
@@ -25,26 +30,23 @@ public class TestRegistExecuteAction extends Action {
             String subject = request.getParameter("f3");
             String testNumStr = request.getParameter("f4");
 
-            // 必須項目のチェック
-            if (entYearStr == null || classNum == null || subject == null || testNumStr == null ||
-                entYearStr.isEmpty() || classNum.isEmpty() || subject.isEmpty() || testNumStr.isEmpty()) {
-                errors.add("入学年度とクラスと科目と回数を選択してください");
-            }
-
-            if (!errors.isEmpty()) {
-                request.setAttribute("errors", errors);
-                request.getRequestDispatcher("test_regist.jsp").forward(request, response);
+            // 入力チェック
+            if (entYearStr == null || entYearStr.equals("0") || classNum == null || classNum.equals("0") ||
+                subject == null || subject.equals("0") || testNumStr == null || testNumStr.equals("0")) {
+                request.setAttribute("error", "入学年度とクラスと科目と回数を選択してください");
+                request.getRequestDispatcher("TestRegist.action").forward(request, response);
                 return;
             }
 
+            // 数値への変換
             int entYear = Integer.parseInt(entYearStr);
             int testNum = Integer.parseInt(testNumStr);
 
-            // 学校情報を取得
-            School school = (School) request.getSession().getAttribute("school");
-            if (school == null) {
-                throw new IllegalStateException("School object is not found in session");
-            }
+            // ログ出力
+            System.out.println("entYear: " + entYear);
+            System.out.println("classNum: " + classNum);
+            System.out.println("subject: " + subject);
+            System.out.println("testNum: " + testNum);
 
             // DAOを使用して条件に合ったテストデータを取得
             TestDao testDao = new TestDao();
@@ -57,15 +59,11 @@ public class TestRegistExecuteAction extends Action {
 
             // 遷移先JSPページを指定
             request.getRequestDispatcher("TestRegist.action").forward(request, response);
-        } catch (NumberFormatException e) {
-            // 数値変換エラーが発生した場合の処理
-            e.printStackTrace();
-            request.setAttribute("errors", "数値を正しく入力してください");
-            request.getRequestDispatcher("test_regist.jsp").forward(request, response);
+
         } catch (Exception e) {
-            // その他の例外処理
             e.printStackTrace();
-            request.getRequestDispatcher("error.jsp").forward(request, response);
+            request.setAttribute("error", "エラーが発生しました");
+            request.getRequestDispatcher("test_regist.jsp").forward(request, response);
         }
     }
 }

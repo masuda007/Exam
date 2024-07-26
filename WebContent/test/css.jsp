@@ -1,4 +1,4 @@
-base.jsp<%@page contentType="text/html; charset=UTF-8" %>
+<%@page contentType="text/html; charset=UTF-8" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <style>
     /* 全体のスタイルリセットと基本設定 */
@@ -17,29 +17,35 @@ base.jsp<%@page contentType="text/html; charset=UTF-8" %>
     }
 
     /* ヘッダーのスタイル */
+    header {
+        background-color: #D7EEFF;;
+        padding: 14px;
+        padding-right: 60px;
+        height: 40px;
+        line-height: 0px;
+
+    }
+
   	h1 {
-    background-color: #e0ffff;
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-}
-.logout {
+	}
+	.logout {
     position: absolute;
     top: 45px;
     right: 20px;
-    bottom: 10px;
     text-decoration: none;
     color: #007bff;
            text-decoration: underline;
     }
-.teacher-name {
+	.teacher-name {
     position: absolute;
     top: 45px;
     right: 130px;
-    bottom: 10px;
-    text-decoration: none;
+
     }
 
 
@@ -93,9 +99,12 @@ base.jsp<%@page contentType="text/html; charset=UTF-8" %>
 
     /* フォームフィールドのスタイル */
     .from-select {
+    	width: 100%; /* コンテナの幅に合わせる */
+    	 max-width: 300px;
         border: 2px solid #f1f1f1;
         border-radius: 8px;
-        padding: 4px 25px;
+        padding: 4px 15px;
+        box-sizing: border-box;
     }
 
     .form-inline {
@@ -209,6 +218,13 @@ base.jsp<%@page contentType="text/html; charset=UTF-8" %>
     .menu-item a:hover {
         background-color: rgba(255, 255, 255, 0.2); /* ホバー時の背景色変更 */
     }
+
+    .form-divider {
+	    border: none; /* デフォルトのボーダーを削除 */
+	    border-top: 1px solid #e0e0e0; /* 画像に基づいた色と幅に設定 */
+	    margin: 20px 0; /* 上下の余白を設定 */
+	    width: 100%; /* 横線の幅を100%に設定 */
+	}
 
 
 </style>

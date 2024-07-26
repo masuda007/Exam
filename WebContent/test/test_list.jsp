@@ -24,10 +24,10 @@
 
         <div class="contents">
             <form action="TestListSubjectExecute.action" method="get" class="form-inline">
-            	<div>科目情報</div>
+            	<div class="section-title">科目情報</div>
 			    <div class="col-4">
-			        <th>入学年度</th>
-			        <select class="form-select" name="f1">
+			        <div>入学年度</div>
+			        <select class="from-select" name="f1">
 			            <option value="0">--------</option>
 			            <c:forEach var="year" items="${yearSet}">
 			                <option value="${year}">${year}</option>
@@ -36,8 +36,8 @@
 			    </div>
 
 			    <div class="col-4">
-			        <th>クラス</th>
-			        <select class="form-select" name="f2">
+			        <div>クラス</div>
+			        <select class="from-select" name="f2">
 			            <option value="0">--------</option>
 			            <c:forEach var="classNum" items="${classNumSet}">
 			                <option value="${classNum}">${classNum}</option>
@@ -46,8 +46,8 @@
 			    </div>
 
 			    <div class="col-4">
-			        <th>科目</th>
-			        <select class="form-select" name="f3">
+			        <div>科目</div>
+			        <select class="from-select" name="f3">
 			            <option value="0">--------</option>
 			            <c:forEach var="subject" items="${subjectsSet}">
 			                <option value="${subject}">${subject}</option>
@@ -60,13 +60,14 @@
 			    </div>
 			</form>
 
+			<div class="line"></div>
 
 			<form action="TestListStudentExecute.action" method="get" class="form-inline">
-				<p>学生情報</p>
+				<p class="section-title">学生情報</p>
 
 			    <div class="col-4">
 			        <div>学生番号</div>
-			        <input type="text" required name="f4" maxlength="10" placeholder="学生番号を入力してください">
+			        <input class="from-select" type="text" required name="f4" maxlength="10" placeholder="学生番号を入力してください">
 			    </div>
 
 			     <div class="col-2 button">
@@ -92,3 +93,19 @@
 
 </body>
 </html>
+
+
+<style>
+	.section-title {
+	    margin-right: 30px; /* 右側に20pxの余白を追加 */
+	    margin-left: 10px;
+	    font-weight: bold;
+	}
+
+
+	.line {
+	    border-top: 2px solid #f1f1f1; /* 薄い灰色の横棒 */
+	    margin: 2px 0; /* 上下に余白を追加 */
+	}
+
+</style>
